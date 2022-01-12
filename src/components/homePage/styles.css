@@ -1,0 +1,16 @@
+.home--container::before{
+    content: '';
+    position: absolute;
+    top:1rem;
+    background:  url('https://momlovesbest.com/wp-content/uploads/2021/02/Best-Anime-For-Kids-1.jpg') no-repeat center center/cover;
+    z-index: -1;
+    left: 0;
+    opacity: .9;
+    height: 100%;
+    width: 100%;
+}
+
+.home--container{
+    /* border: 2px solid black; */
+    padding: none;
+}
