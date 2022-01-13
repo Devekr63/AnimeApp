@@ -12,5 +12,9 @@
 
 .home--container{
     /* border: 2px solid black; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
     padding: none;
+    height: 100vh;
 }

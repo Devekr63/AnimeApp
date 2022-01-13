@@ -1,0 +1,49 @@
+*,*::after, *::before{
+    box-sizing: border-box;
+}
+
+#empty--space{
+    height: 5rem;
+}
+
+.anime--container{
+    min-height: 100vh;
+    width: 100%;
+    padding: 0 4rem;
+    margin: 2rem;
+    border: 2px solid red;
+    display: grid;
+    gap: 2rem;
+    grid-template-areas: 
+        "a b b"
+        "c c c";
+}
+
+.image--box{
+    grid-area : a;
+    border: 2px solid black;
+    padding: 1rem;
+    /* margin: 1.5rem; */
+}
+
+
+.details--box{
+    grid-area:b;
+    border: 2px solid black;
+    /* margin: 1.5rem; */
+}
+
+.desc--box{
+    grid-area: c;
+    border: 2px solid black;
+    /* margin: 1.5rem; */
+}
+
+img+p>a{
+    color: red;
+    font-size: 2rem;
+}
+
+img+p>a:hover{
+    color: blue;
+}

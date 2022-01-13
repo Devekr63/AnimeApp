@@ -31,11 +31,14 @@ export default function FreeSolo(props) {
     
     async function getAnimeDetails(animeInfo){
       let response = await axios.get(`https://api.aniapi.com/v1/anime/${animeInfo.id}`)
-      props.getData(getAnimeDesc(response));
+      props.animeData(getAnimeDesc(response));
     }
 
     function searchHandler(event, value){
-      handlesearch(value ? getAnime(animeList, value) : getAnimeFromApi(animeList, event.target.value));
+      handlesearch(
+        value ? getAnime(animeList, value) : 
+        getAnimeFromApi(animeList, event.target.value, handleAnimeList)
+      );
     }
 
 

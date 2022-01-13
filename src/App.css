@@ -1,8 +1,9 @@
 .App{
-    height: 100vh;
+    min-height: 100vh;
     /* border: 2px solid red; */
-    font-size: 10rem;
+    /* font-size: 10rem; */
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 }

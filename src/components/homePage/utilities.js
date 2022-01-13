@@ -6,22 +6,13 @@ export function getAnimeName(response){
 
 export function getAnime(animeList, animeTitle){
     return animeList.find(
-        anime => anime.title.toLowerCase().includes(animeTitle.toLowerCase().trim())
+        anime => anime.title.toLowerCase() == animeTitle.toLowerCase().trim()
     )
 }
 
-export async function getAnimeFromApi(animeList, animeTitle){
-    const animeObj = animeList.find(
-        anime => anime.title.toLowerCase().includes(animeTitle.toLowerCase().trim())
-    );
-    if(animeObj){
-        return animeObj;
-    }
-
+export async function getAnimeFromApi(animeList, animeTitle, handleList){
     let response = await axios.get(`https://api.aniapi.com/v1/anime?title=${animeTitle}`);
-    // console.log(response.data.data.documents.map(anime => anime.titles.en));
-    animeList.push(...response.data.data.documents.map((anime => ({title:anime.titles.en, id:anime.id}))));
-    
+    handleList(response.data.data.documents.map((anime => ({title:anime.titles.en, id:anime.id}))));
 }
 
 export function getAnimeDesc(response){
