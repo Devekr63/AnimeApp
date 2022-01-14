@@ -59,15 +59,26 @@
 .details--box > ul{
     grid-area: a1;
     display: grid;
-    justify-content: space-evenly;
-    padding: 1rem;
+    /* justify-content: space-evenly; */
+    /* padding: 1rem; */
     margin-top: 10rem;
-    gap: .75rem;
-    /* border-bottom: 2px solid rgba(0,0,0,0.75); */
+    gap: .8rem;
+    /* border: 2px solid rgba(0,0,0,0.75); */
     grid-template-areas: 
-        "a1 b2"
-        "b1 b3"
+        "a1 a1"
         "c1 c1";
+}
+
+.details--box>ul>li:first-child {
+    grid-area: a1;
+    /* border: 2px solid red; */
+}
+
+.details--box>ul>li:first-child>ul li {
+    border: none;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    gap: .45rem;
 }
 
 .desc--box{

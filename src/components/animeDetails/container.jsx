@@ -21,10 +21,14 @@ function container(props) {
                     </div>
                     <div className='details--box'>
                         <ul>
-                            <li className='list--underlined'><span>Ratings</span>  {props.data.score}</li>
-                            <li className='list--underlined'><span>Seasons</span>  {props.data.season_period}</li>
-                            <li className='list--underlined'><span>First Episode</span>  {props.data.start_date.substring(0,10)}</li>
-                            <li className='list--underlined'><span>Last Episode</span>  {props.data.end_date.substring(0,10)} </li>
+                            <li>
+                                <ul>
+                                    <li className='list--underlined'><span>Ratings</span>  {props.data.score}</li>
+                                    <li className='list--underlined'><span>Seasons</span>  {props.data.season_period}</li>
+                                    <li className='list--underlined'><span>First Episode</span>  {props.data.start_date.substring(0,10)}</li>
+                                    <li className='list--underlined'><span>Last Episode</span>  {props.data.end_date.substring(0,10)} </li>
+                                </ul>
+                            </li>
                             <li>
                                 <div>Genres</div>
                                 {<ul>

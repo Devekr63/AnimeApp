@@ -8,7 +8,7 @@ import Button from '@mui/material/Button';
 
 const pages = ['Top 100', 'Category', 'Home'];
 
-const ResponsiveAppBar = () => {
+const ResponsiveAppBar = (props) => {
 
   return (
     <AppBar position="fixed" >
@@ -28,6 +28,7 @@ const ResponsiveAppBar = () => {
               <Button
                 key={page}
                 sx={{ my: 2, color: 'white', display: 'block' }}
+                onClick={() => props.optionsInNav(page)}
               >
                 {page}
               </Button>
