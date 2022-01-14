@@ -10,17 +10,34 @@ function removeHtml(str){
 function container(props) {
     return (
         <>
-            <div id='empty--space'></div>
-            <div className='anime--container'>
-                <div className='image--box'>
-                    <img src={props.data.cover_image}/>
-                    <p><a href={props.data.trailer_url} target={"_blank"}>{props.data.titles.en}</a></p>
-                </div>
-                <div className='details--box'>
-                    {``}
-                </div>
-                <div className='desc--box'>
-                    {removeHtml(props.data.descriptions.en)}
+            <div className="main">
+                <div className='anime--container'>
+                    <div className='image--box'>
+                        <img src={props.data.cover_image}/>
+                        <p>
+                            <a href={props.data.trailer_url} target={"_blank"}>{props.data.titles.en}</a>
+                            <a href={props.data.trailer_url} target={"_blank"}>{props.data.titles.jp}</a>
+                        </p>
+                    </div>
+                    <div className='details--box'>
+                        <ul>
+                            <li className='list--underlined'><span>Ratings</span>  {props.data.score}</li>
+                            <li className='list--underlined'><span>Seasons</span>  {props.data.season_period}</li>
+                            <li className='list--underlined'><span>First Episode</span>  {props.data.start_date.substring(0,10)}</li>
+                            <li className='list--underlined'><span>Last Episode</span>  {props.data.end_date.substring(0,10)} </li>
+                            <li>
+                                <div>Genres</div>
+                                {<ul>
+                                    {props.data.genres.slice(0,5).map( genre => <li>{genre}</li>)}
+                                </ul>
+                                }
+                            </li>
+                        </ul>
+                        <div className='desc--box'>
+                            <div>Description</div>
+                            <p>{removeHtml(props.data.descriptions.en)}</p> 
+                        </div>
+                    </div>
                 </div>
             </div>
         </>

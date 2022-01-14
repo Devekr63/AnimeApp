@@ -17,7 +17,7 @@ function App() {
   }
 
   return (
-    <div className="App">
+    <div className={!anime ? "App" : "App--Anime--Container"}>
       <Header/>
       {!anime ? 
         <HomePage animeData={(data) => getData(data)}/> : 
